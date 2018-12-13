@@ -176,5 +176,3 @@ for color in colors:
   print("Thread Shed sold {0} threads of {1} thread today.".format(color_count(color),color))
 
 print("The total sales of taday is {0}".format(total_sales))
-
-#round(a,2))
