@@ -1,3 +1,4 @@
+#url : https://www.youtube.com/watch?v=dp7VPBv6J-k&feature=youtu.be
 destinations = ['Paris, France', 'Shanghai, China', 'Los Angeles, USA', 'So Paulo, Brazil', 'Cairo, Egypt', 'a']
 
 test_traveler = ['Erin Wilkes', 'Shanghai, China', ['historical site', 'art']]
