@@ -7,15 +7,11 @@ stacks = []
 left_stack = Stack("Left")
 middle_stack =Stack("Middle")
 right_stack = Stack("Right")
-
 stacks += [left_stack, middle_stack, right_stack]
-
 #Set up the Game
 num_disks = int(input("\nHow many disks do you want to play with?\n"))
-
 while num_disks < 3:
   num_disks = int(input("Enter a number greater than or equal to 3\n"))
-
 for disk in range(num_disks, 0,  -1):
   left_stack.push(disk)
 #left_stack.print_items()
@@ -26,7 +22,7 @@ print("\nThe fastest you can solve this game is in {num} moves".format(num = num
 #Get User Input
 def get_input():
 
-  choices = [stack.get_name()[0]for stack in stacks]
+  choices = [(stack.get_name()[0]for stack in stacks]
 
   while True:
 
@@ -39,10 +35,9 @@ def get_input():
 
     if user_input in choices:
       for i in range(len(stacks)):
-        print ("good")
-        return stacks[i]
-    else:
-      print("Wrong letter")
+        if user_input == choices[i]:
+          return stacks[i]
+
 
 #Play the Game
 num_user_moves = 0
@@ -68,10 +63,10 @@ while right_stack.get_size() != num_disks:
       disk = from_stack.pop()
       to_stack.push(disk)
       num_user_moves += 1
-      break
+
     else:
       print("\n\n Loser Invalid Move. Try Again")
-      print(to_stack.get_size())
+    break
 
 print("\n\nYou completed the game in {a} moves, and the optimal number of moves is {b}".format(a = num_user_moves, b = num_optimal_moves))
 
