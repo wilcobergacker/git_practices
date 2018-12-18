@@ -22,7 +22,7 @@ print("\nThe fastest you can solve this game is in {num} moves".format(num = num
 #Get User Input
 def get_input():
 
-  choices = [(stack.get_name()[0]for stack in stacks]
+  choices = [(stack.get_name()[0])for stack in stacks]
 
   while True:
 
