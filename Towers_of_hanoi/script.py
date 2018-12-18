@@ -56,16 +56,15 @@ while right_stack.get_size() != num_disks:
     to_stack = get_input()
 
     if from_stack.get_size() == 0:
-      print("\n\n Mongeloid Invalid Move. Try Again")
+      print("\n\n Invalid Move. Try Again")
 
     elif to_stack.get_size() == 0 or from_stack.peek() < to_stack.peek():
-      print ("Goed bezig henkie")
       disk = from_stack.pop()
       to_stack.push(disk)
       num_user_moves += 1
 
     else:
-      print("\n\n Loser Invalid Move. Try Again")
+      print("\n\nInvalid Move. Try Again")
     break
 
 print("\n\nYou completed the game in {a} moves, and the optimal number of moves is {b}".format(a = num_user_moves, b = num_optimal_moves))
