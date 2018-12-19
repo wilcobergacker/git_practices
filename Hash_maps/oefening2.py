@@ -17,5 +17,15 @@ class HashMap:
     return hash_code % self.array_size
 
   def assign(self, key, value):
-    #Save the value (just the value for now) to the map’s array at the index determined by plugging the key into the .hash() method and plugging the hash code into the .compressor() method  
+    #Save the value (just the value for now) to the map’s array at the index determined by plugging the key into the .hash() method and plugging the hash code into the .compressor() method
     self.array[self.compressor(self.hash(key))] = value
+
+  def retrieve(self, key):
+    array_index = self.compressor(self.hash(key))
+    return self.array[array_index]
+
+
+hash_map = HashMap(20)
+hash_map.assign("gneiss","metamorphic")
+
+print(hash_map.retrieve("gneiss"))
