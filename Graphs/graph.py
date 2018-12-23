@@ -11,17 +11,27 @@ class Graph:
     if not self.directed:
       self.graph_dict[to_vertex.value].add_edge(from_vertex.value, weight)
 
-
   def find_path(self, start_vertex, end_vertex):
-    print("Searching from {0} tp {1}".format(start_vertex, end_vertex))
     start = [start_vertex]
-    while start:
+    # Checkpoint 1, replace these comments:
+    seen = {}
+
+    while len(start) > 0:
       current_vertex = start.pop(0)
-      print("Current Vertex: " + current_vertex)
-            #START CODE HERE
+      seen[current_vertex] = True
+
+      print("Visiting " + current_vertex)
       if current_vertex == end_vertex:
         return True
-      vertex = self.graph_dict[current_vertex]
-      next_vertices = vertex.get_edges()
-      start += next_vertices
+      else:
+        vertex = self.graph_dict[current_vertex]
+        next_vertices = vertex.get_edges()
+
+        # Filter next_vertices so it only
+        # includes vertices NOT IN seen
+
+        # Checkpoint 3, uncomment and replace the question marks:
+        next_vertices = [vertex for vertex in next_vertices if vertex not in seen]
+        start.extend(next_vertices)
+
     return False
