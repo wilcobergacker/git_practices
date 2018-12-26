@@ -8,9 +8,10 @@ def swap(arr, index_1, index_2):
 
 # define bubble_sort():
 def bubble_sort(arr):
-  for i in range(len(arr)-1):
-    if arr[i] > arr[i + 1]:
-      swap(arr, i, (i + 1))
+    for el in arr:
+      for i in range(len(arr)-1):
+        if arr[i] > arr[i + 1]:
+          swap(arr, i, (i + 1))
 
 ##### test statements
 
